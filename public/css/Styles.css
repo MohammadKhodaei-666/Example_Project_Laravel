@@ -1,0 +1,546 @@
+@font-face{
+    font-family: yekan;
+    src: url('../fonts/Yekan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: roya;
+    src: url('../fonts/RoyaR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: roya;
+    src: url('../fonts/RoyaB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+body{
+    direction: rtl;
+    font-family: yekan;
+    background-color: #eee;
+}
+input, select, textarea{
+    font-family: inherit;
+    font-size: inherit;
+}
+a{
+    text-decoration: none;
+}
+#topmenu{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 54px;
+    z-index: 1;
+    font-family: roya;
+}
+#topmenu ul{
+    position: absolute;
+    width: 100%;
+    max-width: 1280px;
+    top: 100%;
+    background-color: black;
+    border: 1px solid white;
+    font-size: 20px;
+    display: none;
+    line-height: 250%;
+}
+#topmenu a{
+    color: white;
+    display: block;
+    padding-right: 30px;
+    border: 1px solid gray;
+    transition: 0.3s;
+}
+#topmenu a:hover{
+    background-color: #ec5;
+    color: #222;
+}
+#button1{
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    z-index: 2;     /*چون روی عناصر دیگه بیاید*/
+    cursor: pointer;
+}
+#button2{
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+#header{
+    font-family: roya;
+    padding-top: 54px;
+    background-color: #347;
+}
+#logo{
+    display: none;
+}
+#search{
+    text-align: center;
+    color: white;
+}
+#search h1{
+    margin-top: 15px;
+    font-size: 40px;
+}
+#search input[type="search"]{
+    max-width: 375px;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+}
+#search input[type="submit"]{
+    width: 80px;
+    border: none;
+    background-color: #3a3;
+    color: #eee;
+    height: 45px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#search input[type="submit"]:hover{
+    color: white;
+    background-color: #4a5;
+}
+#cats{
+    position: fixed;
+    top: 54px;
+    bottom: 0;
+    width: 300px;
+    right: -300px;
+    background-color: white;
+    line-height: 270%;
+    transition: 0.3s;
+    box-shadow: 0 0 3px black;
+    z-index: 1;     /*برای اینکه منو روی آیتم ها بیاد*/
+    overflow: auto;
+}
+#cats a{
+    display: block;
+    color: #333;
+    padding: 0 15px;
+    border-bottom: 1px solid #bcd;
+}
+#cats a:hover{
+    background-color: #bcd;
+}
+#cats .submenu a{
+    padding-right: 30px;
+    font-size: 14px;
+}
+#cats .submenu .submenu a{
+    padding-right: 45px;
+}
+#cats .plus{
+    float: left;
+    font-size: 1.2em;
+    padding: 0 15px;    /*فضای بیشتری اشغال میکند و لازم نیست حتما روی + کلیک کنیم*/
+}
+#cats .submenu{
+    display: none;
+    background-color: #f7f7f7;
+}
+#cats .submenu .submenu{
+    background-color: #eee;
+}
+#content{
+    margin-top: 15px;
+}
+#content .group{
+    background-color: white;
+    box-shadow: 0 1px 2px #aaa;
+    margin-bottom: 30px;
+}
+#content .group h2{
+    background-color: #f4f6f8;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    line-height: 240%;
+}
+#content article{
+    margin: 15px auto;
+    text-align: center;
+    max-width: 340px;
+    box-shadow: 0 0 0 1px #ccc;
+}
+#content article:hover{
+    box-shadow: 0 3px 10px 2px #ccc;
+}
+#content .image{
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+#content .imagelabel{
+    background-color: red;
+    color: white;
+    width: 150px;
+    font-size: 18px;
+    opacity: 0.8;
+    position: absolute;
+    top: 15px;
+    left: -45px;
+    transform: rotate(-45deg);
+}
+#content .image img{
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+#content article:hover .image img{
+    transform: scale(1.1);
+}
+#content article h3{
+    color: black;
+    font-weight: normal;
+    text-align: justify;
+    margin: 10px 8px 0 8px;
+    font-size: 16px;
+    height: 70px;
+    overflow: hidden;
+}
+#content .rate{
+    margin: 10px;
+    text-align: right;
+    color: black;
+    font-size: 14px;
+}
+#content .rate span:first-child{
+    background-color: #49e;
+    padding: 3px 4px 1px 4px;
+    border-radius: 3px;
+    margin-left: 8px;
+    color: white;
+}
+#content .star{
+    height: 20px;
+    width: 20px;
+    vertical-align: -4px;
+}
+#content .price{
+    font-size: 22px;
+    color: #e22;
+    margin: 10px;
+}
+#content .buy{
+    display: block;
+    background-color: #49f;
+    color: white;
+    font-size: 20px;
+    line-height: 200%;
+}
+#content .buy:hover{
+    background-color: #24a;
+}
+#sidebar{
+    margin-top: 15px;
+}
+#sidebar .group{
+    background-color: white;
+    box-shadow: 0 1px 2px #aaa;
+    margin-bottom: 30px;
+}
+#sidebar .group h2{
+    background-color: #f4f6f8;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    line-height: 240%;
+}
+#sidebar article{
+    margin: 15px auto;
+    text-align: center;
+    max-width: 340px;
+    box-shadow: 0 0 0 1px #ccc;
+    position: relative;
+    overflow: hidden;
+}
+#sidebar article:hover{
+    box-shadow: 0 3px 10px 2px #ccc;
+}
+#sidebar .imagelabel{
+    background-color: red;
+    color: white;
+    width: 150px;
+    font-size: 18px;
+    opacity: 0.8;
+    position: absolute;
+    top: 25px;
+    left: -35px;
+    transform: rotate(-45deg);
+}
+#sidebar .discount{
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+    width: 50px;
+    height: 38px;
+    padding-top: 12px;
+    font-size: 18px;
+    opacity: 0.8;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#sidebar article img{
+    width: 100%;
+    display: block;
+}
+#sidebar article .popup{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+}
+#sidebar article .comment{
+    padding: 5px;
+    height: 65px;
+    font-size: 16px;
+    overflow: hidden;
+    text-align: justify;
+}
+#sidebar article .price{
+    color: yellow;
+    font-size: 22px;
+}
+#contact{
+    background-color: #667;
+    color: white;
+}
+#contact ul{
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;    /*اگر آیتم ها جا نشدند برن خط بعد*/
+    justify-content: space-around;
+}
+#contact li{
+    padding: 10px 30px;
+}
+#contact .mail, #contact .phone{
+    direction: ltr;
+}
+#contact .mail img, #contact .phone img{
+    width: 24px;
+    height: 24px;
+    vertical-align: bottom;
+}
+#details{
+    background-color: #222;
+    border-top: 3px solid darkred;
+    padding: 15px 0 30px 0;
+}
+#details h3{
+    color: white;
+    margin-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    font-family: roya;
+}
+#details .about{
+    text-align: right;
+    margin-top: 10px;
+    border-bottom: 1px solid #555;
+}
+#details p{
+    color: #999;
+    text-align: justify;
+    font-size: 14px;
+}
+#details li{
+    text-align: center;
+}
+#details a{
+    color: #999;
+    font-size: 14px;
+}
+#details a:hover{
+    color: #cef;
+}
+#copyright{
+    background-color: #111;
+}
+#copyright p{
+    color: #aaa;
+    font-size: 11px;
+    text-align: center;
+    margin: 15px 0;
+}
+#copyright b{
+    color: white;
+}
+#copyright li img{
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+#copyright li{
+    display: inline-block;
+    margin: 0 5px;
+}
+#copyright ul{
+    text-align: center;
+    padding-top: 10px;
+}
+#copyright li img:hover{
+    opacity: 0.6;
+}
+@media screen and (min-width:720px){
+    #logo{
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+    }
+    #copyright p{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width:960px){
+    #button1, #button2{
+        display: none;
+    }
+    #topmenu{
+        border-bottom: 4px solid green;
+        height: 50px;
+        position: static;
+    }
+    #topmenu ul{
+        display: flex !important;
+        position: static;
+        border: none;
+    }
+    #topmenu a{
+        padding: 0 30px;
+        border: none;
+        background-color: #444;
+        margin: 0 2px;
+    }
+    #topmenu li:nth-child(4){
+        margin-right: auto;
+    }
+    #header{
+        padding-top: 0;
+    }
+    #cats{
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-bottom: 1px solid #ccc;
+        font-size: 15px;
+        background-color: #f4f6f8;
+    }
+    #cats .plus{
+        display: none;
+    }
+    #cats > ul{
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    #cats .item{
+        float: right;
+    }
+    #cats a{
+        border: none;
+        padding: 0 20px;
+    }
+    #cats a:hover{
+        background-color: transparent;
+    }
+    #cats li:hover{
+        background-color: white;
+    }
+    #cats li:hover > ul{
+        display: block !important;
+    }
+    #cats .submenu{
+        width: 200px;
+        position: absolute;
+        border: 1px solid #ccc;
+        border-top: none;
+        background-color: #f3fff3;
+        z-index: 1;
+        line-height: 240%;
+    }
+    #cats .subitem{
+        position: relative;
+        border: 1px solid #ccc;
+    }
+    #cats .submenu .submenu{
+        top: -1px;
+        right: 100%;
+        background-color: #f3fff3;
+    }
+    #cats .subitem a {
+        padding: 0 15px !important;
+    }
+    #content article h3{
+        font-size: 14px;
+    }
+    #content .price{
+        font-size: 20px;
+        margin: 5px;
+    }
+    #sidebar article .comment{
+        font-size: 15px;
+    }
+    #sidebar article .price{
+        font-size: 20px;
+    }
+    #sidebar article .popup{
+        bottom: -110px;
+        transition: 0.4s;
+    }
+    #sidebar article:hover .popup{
+        bottom: 0;
+    }
+}
+@media screen and (min-width:1140px){
+    main > div{
+        display: flex;
+    }
+    main > div > div{
+        order: 2;
+    }
+}
+
+/*.wrapper{
+    width:360px;
+}
+@media screen and (min-width: 720px) {
+    .wrapper{
+        width:720px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .wrapper{
+        width:960px;
+    }
+}
+@media screen and (min-width: 1140px) {
+    .wrapper{
+        width:1140px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .wrapper{
+        width:1280px;
+    }
+}*/
